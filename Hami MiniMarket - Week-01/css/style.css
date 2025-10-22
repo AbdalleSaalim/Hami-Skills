@@ -172,7 +172,7 @@ nav ul li a:hover {
   font-size: 2rem;
   margin: 0 0 30px;
   text-align: center;
-  grid-column: 1 / -1; /* ku fidi container-ka oo dhan */
+  grid-column: 1 / -1;
   justify-self: center;
 }
 
@@ -356,6 +356,34 @@ footer {
 
   .info-box {
     width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #2E7D32;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+    transition: all 0.4s ease;
+    transform: translateY(-150%);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  nav ul.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-toggle {
+    display: flex;
   }
 }
 

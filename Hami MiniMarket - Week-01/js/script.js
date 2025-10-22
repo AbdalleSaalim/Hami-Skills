@@ -27,3 +27,11 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     this.reset();
   }
 });
+
+// Responsive Navbar Toggle
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.querySelector("nav ul");
+
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
