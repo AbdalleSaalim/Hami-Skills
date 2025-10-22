@@ -13,7 +13,7 @@ body {
 
 /* ===== Header ===== */
 header {
-  background: #008037;
+  background: #2E7D32;
   color: #fff;
   padding: 15px 0;
 }
@@ -27,13 +27,19 @@ header .container {
 }
 
 header .logo {
-  width: 120px;
+  width: 100px;
+  border: 5px solid #008037;
+  border-radius: 50px;
+  padding: 1px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
+  flex-direction: row;
   gap: 20px;
+  align-items: center;
+  margin: 0;
 }
 
 nav ul li a {
@@ -46,10 +52,10 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* ===== Hero Section ===== */
-#hero {
-  background: url("../assets/images/hero-banner.jpg") center/cover no-repeat;
-  height: 80vh;
+/* ===== home Section ===== */
+#home {
+  background: url("../assets/images/cover.jpg") center/cover no-repeat;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,14 +63,16 @@ nav ul li a:hover {
   color: #fff;
 }
 
-.hero-content h1 {
+.home-content h1 {
   font-size: 3rem;
   margin-bottom: 10px;
+  color: black;
 }
 
-.hero-content p {
+.home-content p {
   margin-bottom: 20px;
   font-size: 1.2rem;
+  color: black;
 }
 
 .btn {
@@ -84,17 +92,20 @@ nav ul li a:hover {
 #products {
   padding: 60px 0;
   text-align: center;
+  background: #E8F5E9;
 }
 
 #products h2 {
   color: #008037;
   margin-bottom: 30px;
+  font-size: 2rem;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 25px;
+  justify-items: center;
 }
 
 .card {
@@ -102,6 +113,8 @@ nav ul li a:hover {
   border-radius: 10px;
   padding: 15px;
   background: #fff;
+  width: 100%;
+  max-width: 320px;
   transition: transform 0.3s;
 }
 
@@ -114,25 +127,127 @@ nav ul li a:hover {
   border-radius: 10px;
   margin-bottom: 10px;
 }
+.price {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #008037;
+  background: #e9ffe9;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
 
-/* ===== About Section ===== */
+
+/* ===== About Section with Borders ===== */
 #about {
-  background: #f5f5f5;
+  background: #FFF3E0;
   padding: 60px 0;
   text-align: center;
+}
+
+#about .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 90px;
+  justify-items: center;
+}
+
+.about-box {
+  border: 2px solid #008037;
+  border-radius: 10px;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  
 }
 
 #about h2 {
   color: #008037;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin: 0 0 30px;
+  text-align: center;
+  grid-column: 1 / -1; /* ku fidi container-ka oo dhan */
+  justify-self: center;
 }
+
+.about-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-box p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.7;
+}
+
+
 
 /* ===== Contact Section ===== */
 #contact {
   padding: 60px 0;
+  background: #E3F2FD;
   text-align: center;
 }
 
+#contact h2 {
+  color: #008037;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contact-intro {
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+/* Contact Info (Call & Email) */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.info-box {
+  background: #ffffff;
+  border: 2px solid #008037;
+  border-radius: 10px;
+  padding: 20px 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h3 {
+  color: #008037;
+  margin-bottom: 10px;
+}
+
+.info-box a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.info-box a:hover {
+  color: #ffb703;
+}
+
+/* Contact Form */
 #contactForm {
   display: flex;
   flex-direction: column;
@@ -156,28 +271,43 @@ nav ul li a:hover {
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
 #contactForm button:hover {
   background: #006b2e;
 }
 
+
+
+
 /* ===== Footer ===== */
 footer {
-  background: #222;
+  background: #1B5E20;
   color: #fff;
   padding: 20px 0;
   text-align: center;
 }
 
+.socials button{
+  background: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 10px;
+  width: 100px;
+}
+
 .socials a {
-  color: #ffb703;
+  color: #000000;
   margin: 0 10px;
   text-decoration: none;
 }
 
 .socials a:hover {
-  color: #fb8500;
+  color: #008037;
 }
 
 /* ===== Back to Top Button ===== */
@@ -199,13 +329,33 @@ footer {
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2rem;
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
 
   nav ul {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
 }
+
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-box {
+    width: 80%;
+  }
+}
+
