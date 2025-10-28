@@ -12,5 +12,6 @@
 - JavaScript (DOM filtering)
 
 ## 🚀 How to Run
-1. Download or clone this repo.
+1. go to github/AbdalleSaalim/Hami-Skills
+1. Download file Hami minimarket week 02
 2. Open `index.html` in your browser.
