@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hami MiniMarket</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="assets/logo.jpg" class="logo">
+    <h1>Hami MiniMarket</h1>
+
+    <div class="search-filter">
+      <input type="text" id="search" placeholder="Search products...">
+      <select id="category">
+        <option value="all">All</option>
+        <option value="fruit">Fruits</option>
+        <option value="vegetable">Vegetables</option>
+      </select>
+      <input type="number" id="priceFilter" placeholder="Max price">
+    </div>
+
+    <div class="cart">
+      🛒 <span id="cartCount">0</span>
+    </div>
+  </header>
+
+  <section id="product-list" class="grid"></section>
+
+  <script src="script.js"></script>
+</body>
+</html>
