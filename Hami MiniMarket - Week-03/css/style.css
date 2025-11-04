@@ -359,40 +359,33 @@ h1 {
   header {
     flex-direction: column;
     align-items: stretch;
-    padding: 12px;
+    padding: 8px; /* Reduced padding */
   }
 
   header h1 {
     text-align: center;
-    font-size: 1.2rem;
-    margin-top: 6px;
+    font-size: 1.1rem; /* Reduced font size */
+    margin-top: 4px; /* Reduced margin */
   }
 
   header .logo {
     margin: 0 auto;
-    width: 72px;
-    height: 72px;
+    width: 60px; /* Adjusted width */
+    height: 60px; /* Adjusted height */
     border-radius: 8px;
   }
 
   .search-filter {
     flex-direction: column;
-    gap: 8px;
+    gap: 6px; /* Reduced gap */
     align-items: stretch;
     justify-content: center;
     width: 100%;
   }
 
-  .search-filter input[type="text"],
-  .search-filter input[type="number"],
-  .search-filter select {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
   .cart {
     align-self: center;
-    margin-top: 6px;
+    margin-top: 4px; /* Reduced margin */
   }
 
   .card img {
