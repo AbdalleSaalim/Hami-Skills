@@ -6,31 +6,35 @@
   <title>Hami MiniMarket</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <header>
-  <h1>Hami MiniMarket</h1>
-
-     <div class="search-filter">
-     <div class="brand" style="display:flex;align-items:center;gap:10px;">
-       <img src="assets/logo.jpg" alt="Hami MiniMarket Logo" class="logo">
-       <h1>Hami MiniMarket</h1>
-     </div>
-   <div class="search-filter">
-         <input type="text" id="search" placeholder="Search products...">
-         <select id="category">
-           <option value="all">All</option>
-           <option value="fruit">Fruits</option>
-           <option value="vegetable">Vegetables</option>
-         </select>
-       </div>
-   
-       <div class="cart" id="cartButton">
-         🛒 <span id="cartCount">0</span>
-       </div>
-     </header>
-
-  <section id="product-list" class="grid"></section>
-
+  <body>
+    <header>
+      <!-- Brand -->
+      <div class="brand">
+        <img src="assets/logo.jpg" alt="Hami MiniMarket Logo" class="logo">
+        <h1>Hami MiniMarket</h1>
+      </div>
+  
+      <!-- Search and filters -->
+      <div class="search-filter">
+        <input type="text" id="search" placeholder="Search products...">
+        <select id="category">
+          <option value="all">All</option>
+          <option value="fruit">Fruits</option>
+          <option value="vegetable">Vegetables</option>
+        </select>
+      </div>
+  
+      <!-- Cart button -->
+      <div class="cart" id="cartButton">
+        🛒 <span id="cartCount">0</span>
+      </div>
+    </header>
+  
+    <!-- spacer to reserve space for the fixed header -->
+    <div class="header-spacer" aria-hidden="true"></div>
+  
+    <section id="product-list" class="grid"></section>
+ 
   <!-- Sidebar Cart -->
   <div id="cartSidebar" class="cart-sidebar">
     <h2>Your Cart</h2>
