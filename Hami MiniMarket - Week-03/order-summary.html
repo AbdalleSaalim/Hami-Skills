@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Summary - Hami MiniMarket</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Order Summary</h1>
+  <div id="summary"></div>
+  <button id="confirm">Confirm Order</button>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cartData")) || [];
+    const summary = document.getElementById("summary");
+
+    if (cart.length === 0) {
+      summary.innerHTML = "<p>No items in cart.</p>";
+    } else {
+      let subtotal = 0;
+      summary.innerHTML = "<ul>";
+      cart.forEach(item => {
+        const total = item.price * item.qty;
+        subtotal += total;
+        summary.innerHTML += `<li>${item.name} (${item.qty}) - $${total}</li>`;
+      });
+      summary.innerHTML += "</ul>";
+
+      const tax = subtotal * 0.05;
+      const finalTotal = subtotal + tax;
+
+      summary.innerHTML += `
+        <p>Subtotal: $${subtotal.toFixed(2)}</p>
+        <p>Tax (5%): $${tax.toFixed(2)}</p>
+        <h3>Total: $${finalTotal.toFixed(2)}</h3>`;
+    }
+
+    document.getElementById("confirm").addEventListener("click", () => {
+      alert("Order confirmed! (no backend yet)");
+      localStorage.removeItem("cartData");
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
