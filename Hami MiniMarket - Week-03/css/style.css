@@ -1,47 +1,53 @@
-
-/* Reset and base */
 *{
-  margin: 0;
+margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: #f4f6f8;
-  color: #333;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* Header: fixed so it stays visible while scrolling */
-:root {
-  --header-height-desktop: 88px;
-  --header-height-tablet: 88px;
-  --header-height-mobile: 120px;
-}
-
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   background: #008C45;
-  color: #fff;
+  color: white;
   padding: 12px 18px;
   display: flex;
-  align-items: center;
+  flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
   gap: 12px;
-  z-index: 10000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-/* Spacer to prevent content being hidden under fixed header.
-   Add a <div class="header-spacer"></div> right after </header> in HTML. */
-.header-spacer {
-  height: var(--header-height-desktop);
-  width: 100%;
+header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  flex: 1 1 auto;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 8px;
+}
+
+
+header .logo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid #008037;
+  border-radius: 50px;
+  padding: 2px;
+  margin-left: -500px;
+  flex: 0 0 auto;
+  flex-shrink: 0;
 }
 
 /* Brand (logo + name) */
@@ -62,9 +68,8 @@ header {
   text-overflow: ellipsis;
 }
 
-/* Logo */
-.brand .logo,
-header .logo {
+/* slightly larger icon and rounded rectangle look */
+.brand .logo {
   width: 64px;
   height: 64px;
   object-fit: cover;
@@ -72,23 +77,9 @@ header .logo {
   border: 2px solid rgba(255,255,255,0.18);
   padding: 2px;
   background: #fff;
-  margin: 0; /* removed negative margin */
-  flex: 0 0 auto;
 }
 
-/* Title within header (keeps spacing) */
-header h1 {
-  margin: 0;
-  font-size: 1.25rem;
-  flex: 1 1 auto;
-  text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 0 8px;
-}
 
-/* Search and filters */
 .search-filter {
   display: flex;
   gap: 10px;
@@ -106,37 +97,20 @@ header h1 {
   font-size: 0.95rem;
 }
 
-/* Cart button/icon */
+/* cart */
 .cart {
   font-size: 18px;
-  background: #fff;
+  background: white;
   color: #008C45;
-  padding: 6px 12px;
-  border-radius: 25px;
-  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   gap: 8px;
   flex: 0 0 auto;
-  cursor: pointer;
-  transition: all 0.3s;
 }
 
-.cart:hover {
-  background: #008C45;
-  color: #fff;
-}
-
-#cartCount {
-  background: red;
-  color: white;
-  padding: 2px 6px;
-  border-radius: 50%;
-  font-size: 0.8rem;
-  margin-left: 4px;
-}
-
-/* Grid and product cards */
+/* grid and cards */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -186,17 +160,43 @@ button:hover {
   background: #006C34;
 }
 
-/* Cart sidebar */
 .cart-sidebar {
   position: fixed;
   top: 0;
   right: -400px;
+  width: 300px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.cart-sidebar.active {
+  right: 0;
+}
+
+.btn {
+  display: inline-block;
+  background: #008C45;
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* ---------- SIDEBAR CART ---------- */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px; /* hidden by default */
   width: 320px;
   height: 100vh;
   background: #ffffff;
   box-shadow: -3px 0 15px rgba(0,0,0,0.2);
   padding: 20px;
-  transition: right 0.35s ease;
+  transition: all 0.4s ease;
   z-index: 9999;
   overflow-y: auto;
 }
@@ -263,7 +263,40 @@ button:hover {
   background: #006C34;
 }
 
-/* Order summary styles */
+/* ---------- CART ICON ---------- */
+.cart {
+  font-size: 18px;
+  background: white;
+  color: #008C45;
+  padding: 6px 12px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.cart:hover {
+  background: #008C45;
+  color: #fff;
+}
+
+#cartCount {
+  background: red;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
+/* ---------- ORDER SUMMARY PAGE ---------- */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f4f6f8;
+  color: #333;
+  padding: 30px;
+}
+
 h1 {
   text-align: center;
   color: #008C45;
@@ -317,6 +350,8 @@ h1 {
   background: #006C34;
 }
 
+
+
 /* Responsive tweaks */
 
 /* Small screens (phones) */
@@ -327,22 +362,17 @@ h1 {
     padding: 12px;
   }
 
-  /* spacer height for mobile header */
-  .header-spacer {
-    height: var(--header-height-mobile);
-  }
-
   header h1 {
     text-align: center;
     font-size: 1.2rem;
     margin-top: 6px;
   }
 
-  .brand .logo {
+  header .logo {
+    margin: 0 auto;
     width: 72px;
     height: 72px;
     border-radius: 8px;
-    margin: 0 auto;
   }
 
   .search-filter {
@@ -378,10 +408,6 @@ h1 {
 
 /* Medium screens (tablets) */
 @media (min-width: 601px) and (max-width: 1024px) {
-  .header-spacer {
-    height: var(--header-height-tablet);
-  }
-
   header h1 {
     font-size: 1.3rem;
   }
@@ -403,15 +429,11 @@ h1 {
 
 /* Large screens tweaks */
 @media (min-width: 1200px) {
-  .header-spacer {
-    height: var(--header-height-desktop);
-  }
-
   header h1 {
     font-size: 1.6rem;
   }
 
-  .brand .logo {
+  header .logo {
     width: 88px;
     height: 88px;
     border-radius: 12px;
@@ -425,9 +447,4 @@ h1 {
     padding: 28px;
     gap: 18px;
   }
-}
-
-/* safety: ensure product list has some top padding if spacer missing */
-#product-list {
-  padding-top: 8px;
 }
