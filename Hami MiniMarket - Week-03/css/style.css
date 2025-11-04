@@ -357,40 +357,66 @@ h1 {
 /* Small screens (phones) */
 @media (max-width: 600px) {
   header {
-    flex-direction: row; /* Keep the logo and title in a row */
-    align-items: center; /* Center align items */
+    flex-direction: column;
+    align-items: stretch;
     padding: 8px; /* Reduced padding */
   }
 
   header h1 {
-    text-align: left; /* Align text to the left */
+    text-align: center;
     font-size: 1.1rem; /* Reduced font size */
-    margin: 0 8px; /* Adjusted margin */
+    margin-top: 4px; /* Reduced margin */
   }
 
   header .logo {
-    margin: 0; /* Remove negative margin */
+    margin: 0 auto;
     width: 60px; /* Adjusted width */
     height: 60px; /* Adjusted height */
     border-radius: 8px;
   }
 
   .search-filter {
-    flex-direction: row; /* Keep search filter in a row */
+    flex-direction: column;
     gap: 6px; /* Reduced gap */
-    align-items: center;
-    justify-content: flex-end;
-    width: auto; /* Allow it to adjust based on content */
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
   }
 
   .cart {
-    margin-left: 8px; /* Add margin to separate from other elements */
+    align-self: center;
+    margin-top: 4px; /* Reduced margin */
+  }
+
+  .card img {
+    height: 180px;
   }
 
   .grid {
     padding: 12px;
     gap: 12px;
     grid-template-columns: 1fr;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  .search-filter {
+    flex: 1 1 480px;
+  }
+
+  .card img {
+    height: 160px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    padding: 18px;
   }
 }
 
