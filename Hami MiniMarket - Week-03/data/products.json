@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Tufaax",
+    "category": "fruit",
+    "price": 2,
+    "stock": 8,
+    "image": "assets/Tufaax.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Cambe",
+    "category": "fruit",
+    "price": 1,
+    "stock": 3,
+    "image": "assets/cambe.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Babaay",
+    "category": "fruit",
+    "price": 2,
+    "stock": 5,
+    "image": "assets/babaay.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Qare",
+    "category": "fruit",
+    "price": 3,
+    "stock": 2,
+    "image": "assets/Qare.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Cananaas",
+    "category": "fruit",
+    "price": 2,
+    "stock": 6,
+    "image": "assets/cananaas.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Liin Macan",
+    "category": "fruit",
+    "price": 1,
+    "stock": 4,
+    "image": "assets/liin.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Moos",
+    "category": "vegetable",
+    "price": 2,
+    "stock": 10,
+    "image": "assets/Moos.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Qajaar",
+    "category": "vegetable",
+    "price": 3,
+    "stock": 3,
+    "image": "assets/qajaar.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Babaay",
+    "category": "vegetable",
+    "price": 2,
+    "stock": 7,
+    "image": "assets/babaay.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Yanyo",
+    "category": "vegetable",
+    "price": 3,
+    "stock": 5,
+    "image": "assets/Yanyo.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Baradho",
+    "category": "vegetable",
+    "price": 2,
+    "stock": 9,
+    "image": "assets/Baradho.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Karoto",
+    "category": "vegetable",
+    "price": 3,
+    "stock": 2,
+    "image": "assets/karoto.jpg"
+  }
+]
